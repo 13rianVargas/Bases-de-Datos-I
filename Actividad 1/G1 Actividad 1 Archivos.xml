@@ -1,0 +1,36 @@
+<xml>
+    <EstudiantesGrupo3>
+        <Estudiante>
+            <nombre>Brian Steven</nombre>
+            <apellido>Vargas Clavijo</apellido>
+            <cedula>1000362410</cedula>
+            <codigo>506232730</codigo>
+            <celular>3212256970</celular>
+            <correo>brians.vargasc@konralorenz.edu.co</correo>
+        </Estudiante>
+        <Estudiante>
+            <nombre>Julián David</nombre>
+            <apellido>Ávila Cortés</apellido>
+            <cedula>1033815445</cedula>
+            <codigo>506232041</codigo>
+            <celular>3102134784</celular>
+            <correo>juliand.avilac@konradlorenz.edu.co</correo>
+        </Estudiante>
+        <Estudiante>
+            <nombre>Luna Anahy</nombre>
+            <apellido>Chaparro Bustos</apellido>
+            <cedula>1019842841</cedula>
+            <codigo>506231731</codigo>
+            <celular>3334002210</celular>
+            <correo>lunaa.chaparrob@konradlorenz.edu.co</correo>
+        </Estudiante>
+        <Estudiante>
+            <nombre>Cristian Esteban</nombre>
+            <apellido>Cortés Parra</apellido>
+            <cedula>1233904080</cedula>
+            <codigo>506242075</codigo>
+            <celular>3058155917</celular>
+            <correo>cristiane.cortesp@konradlorenz.edu.co</correo>
+        </Estudiante>
+    </EstudiantesGrupo3>
+</xml>
