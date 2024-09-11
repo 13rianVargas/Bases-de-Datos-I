@@ -1,0 +1,116 @@
+-- Tabla Persona
+CREATE TABLE Persona (
+    DocumentoID INT,
+    TipoDeDocumento VARCHAR(50) NOT NULL,
+    PersonalID INT,
+    Nombre VARCHAR(50) NOT NULL,
+    Celular INT,
+    PRIMARY KEY (DocumentoID, TipoDeDocumento)
+);
+
+-- Tabla Empleado (relacionada con Persona)
+CREATE TABLE Empleado (
+    PersonalID INT PRIMARY KEY,
+    EmpleadoID INT,
+    Cargo VARCHAR(50) NOT NULL,
+    Dependencia VARCHAR(50) NOT NULL,
+    TipoDeContrato VARCHAR(50) NOT NULL,
+    EPS VARCHAR(50) NOT NULL,
+    ARL VARCHAR(50) NOT NULL,
+    NombreDeEmergencia VARCHAR(50) NOT NULL,
+    CelularDeEmergencia INT,
+    FOREIGN KEY (PersonalID) REFERENCES Persona(PersonalID)
+);
+
+-- Tabla Cliente (relacionada con Persona)
+CREATE TABLE Cliente (
+    PersonalID INT PRIMARY KEY,
+    ClienteID INT,
+    Direccion VARCHAR(50) NOT NULL,
+    TipoDeCliente VARCHAR(50),
+    FechaDeNacimiento DATE,
+    EstadoCivil VARCHAR(50) NOT NULL,
+    AutorizacionDeDatos VARCHAR(50) NOT NULL,
+    FOREIGN KEY (PersonalID) REFERENCES Persona(PersonalID)
+);
+
+-- Tabla Proveedor (relacionada con Persona)
+CREATE TABLE Proveedor (
+    PersonalID INT PRIMARY KEY,
+    ProveedorID INT,
+    TipoDeProveedor VARCHAR(50) NOT NULL,
+    NombreDeContacto VARCHAR(50) NOT NULL,
+    NumeroDeContacto INT,
+    FOREIGN KEY (PersonalID) REFERENCES Persona(PersonalID)
+);
+
+-- Tabla Producto
+CREATE TABLE Producto (
+    ProductoID INT PRIMARY KEY,
+    NombreDelProducto VARCHAR(50) NOT NULL,
+    DescripcionDelProducto VARCHAR(255) NULL,
+    Categoria VARCHAR(50) NOT NULL,
+    Marca VARCHAR(50) NOT NULL
+);
+
+-- Tabla ProveedorProducto (relacionada con Proveedor y Producto)
+CREATE TABLE ProveedorProducto (
+    ProveedorProductoID INT PRIMARY KEY,
+    ProductoID INT,
+    ProveedorID INT,
+    ValorMinimo FLOAT,
+    ValorMaximo FLOAT,
+    FOREIGN KEY (ProductoID) REFERENCES Producto(ProductoID),
+    FOREIGN KEY (ProveedorID) REFERENCES Proveedor(ProveedorID)
+);
+
+-- Tabla OrdenDeCompra (relacionada con Empleado y Cliente)
+CREATE TABLE OrdenDeCompra (
+    OrdenDeCompraID INT PRIMARY KEY,
+    EmpleadoID INT,
+    ClienteID INT,
+    MedioDePago VARCHAR(50) NOT NULL,
+    FechaPago DATE,
+    FechaEnvio DATE,
+    FechaEntrega DATE,
+    ValorTotal FLOAT,
+    FOREIGN KEY (EmpleadoID) REFERENCES Empleado(EmpleadoID),
+    FOREIGN KEY (ClienteID) REFERENCES Cliente(ClienteID)
+);
+
+-- Tabla Pedido (relacionada con OrdenDeCompra y Producto)
+CREATE TABLE Pedido (
+    PedidoID INT PRIMARY KEY,
+    OrdenDeCompraID INT,
+    ProductoID INT,
+    Cantidad INT,
+    ValorUnitario FLOAT,
+    FOREIGN KEY (OrdenDeCompraID) REFERENCES OrdenDeCompra(OrdenDeCompraID),
+    FOREIGN KEY (ProductoID) REFERENCES Producto(ProductoID)
+);
+
+-- Tabla CompralInsumos (relacionada con ProveedorProducto)
+CREATE TABLE CompralInsumos (
+    CompralInsumosID INT PRIMARY KEY,
+    ProveedorProductoID INT,
+    Cantidad INT,
+    Estado VARCHAR(50) NOT NULL,
+    FechaDeCompra DATE,
+    FechaDeEntrega DATE,
+    PrecioUnitario FLOAT,
+    ProductoMasIva FLOAT,
+    ValorTotal FLOAT,
+    FOREIGN KEY (ProveedorProductoID) REFERENCES ProveedorProducto(ProveedorProductoID)
+);
+
+-- Tabla Kardex (relacionada con Producto)
+CREATE TABLE Kardex (
+    KardexID INT PRIMARY KEY,
+    ProductoID INT,
+    CantidadSalida INT,
+    CantidadEntrada INT,
+    CantidadDisponible INT,
+    MotivoSalida VARCHAR(250) NULL,
+    Fecha DATE,
+    FOREIGN KEY (ProductoID) REFERENCES Producto(ProductoID)
+);
