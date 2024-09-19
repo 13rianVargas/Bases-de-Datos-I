@@ -1,0 +1,3 @@
+[submodule "SuperLorenz"]
+	path = SuperLorenz
+	url = https://github.com/13rianVargas/SuperLorenz.git
