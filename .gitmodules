@@ -1,3 +1,7 @@
 [submodule "BD-SuperLorenz"]
 	path = BD-SuperLorenz
 	url = https://github.com/13rianVargas/BD-SuperLorenz
+
+[submodule "SuperLorenz"]
+	path = SuperLorenz
+	url = https://github.com/SuperLorenz-Web/SuperLorenz
