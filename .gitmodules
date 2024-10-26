@@ -1,0 +1,3 @@
+[submodule "SuperLorenz-SQL"]
+	path = SuperLorenz-SQL
+	url = https://github.com/13rianVargas/SuperLorenz-SQL
