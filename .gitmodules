@@ -1,7 +1,7 @@
-[submodule "BD-SuperLorenz"]
-	path = BD-SuperLorenz
-	url = https://github.com/13rianVargas/BD-SuperLorenz
+[submodule "SuperLorenz-SQL"]
+	path = SuperLorenz-SQL
+	url = https://github.com/13rianVargas/SuperLorenz-SQL
 
-[submodule "SuperLorenz"]
-	path = SuperLorenz
-	url = https://github.com/SuperLorenz-Web/SuperLorenz
+[submodule "SuperLorenz-Web"]
+	path = SuperLorenz-Web
+	url = https://github.com/SuperLorenz-Web/SuperLorenz-Web
