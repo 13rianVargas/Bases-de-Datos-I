@@ -14,8 +14,8 @@ Repositorio de ejemplos y recursos para el curso de Bases de Datos I.
 ### JSON & XML
 
 Ejemplos de estructuras de datos en formato JSON y XML:
-- `TablasDeEstudiantes.json`
-- `TablasDeEstudiantes.xml`
+- `JSON & XML/TablasDeEstudiantes.json`
+- `JSON & XML/TablasDeEstudiantes.xml`
 
 ## Subrepositorio
 
